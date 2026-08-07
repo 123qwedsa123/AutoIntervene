@@ -16,7 +16,8 @@
       <a class="brand" href="#top">AutoIntervene</a>
       <div class="nav-links">
         <a href="#method">Method</a>
-        <a href="#experiments">Experiments</a>
+        <a href="#videos">Videos</a>
+        <a href="#results">Results</a>
         <a href="#citation">Citation</a>
       </div>
     </nav>
@@ -66,16 +67,128 @@
     </div>
   </section>
 
-  <section id="experiments" class="shell section">
+  <section id="videos" class="shell section">
     <div class="section-heading narrow">
-      <p class="section-kicker">Experiments</p>
-      <h2>Tested on diverse, long-horizon manipulation</h2>
-      <p>AutoIntervene is evaluated with ACT, Diffusion Policy, and Flow Matching action heads across tasks involving deformable objects, containers, sorting, transfer, and disassembly.</p>
+      <p class="section-kicker">Experiment videos</p>
+      <h2>Nine real-world bimanual tasks</h2>
+      <p>Complete rollouts are compressed for web playback while preserving every experiment from the original project.</p>
     </div>
-    <div class="gallery">
-      <img src="assets/towel.jpg" alt="Bimanual towel manipulation experiment" loading="lazy">
-      <img src="assets/vegetable.jpg" alt="Vegetable sorting experiment" loading="lazy">
-      <img src="assets/disassembly.jpg" alt="Peg disassembly experiment" loading="lazy">
+    <div class="video-grid">
+      <article class="video-card">
+        <video controls preload="metadata" playsinline poster="assets/posters/peg-disassembly.jpg"><source src="assets/videos/peg-disassembly.mp4" type="video/mp4"></video>
+        <div><span>01</span><h3>Peg Disassembly</h3><p>Disassemble a pegged object and place all parts into the box.</p></div>
+      </article>
+      <article class="video-card">
+        <video controls preload="metadata" playsinline poster="assets/posters/potato-transfer.jpg"><source src="assets/videos/potato-transfer.mp4" type="video/mp4"></video>
+        <div><span>02</span><h3>Potato Transfer</h3><p>Transfer a wooden potato between hands and place it into the box.</p></div>
+      </article>
+      <article class="video-card">
+        <video controls preload="metadata" playsinline poster="assets/posters/towel-folding.jpg"><source src="assets/videos/towel-folding.mp4" type="video/mp4"></video>
+        <div><span>03</span><h3>Towel Folding</h3><p>Fold a towel from a fixed initial configuration.</p></div>
+      </article>
+      <article class="video-card">
+        <video controls preload="metadata" playsinline poster="assets/posters/towel-bagging.jpg"><source src="assets/videos/towel-bagging.mp4" type="video/mp4"></video>
+        <div><span>04</span><h3>Towel Bagging</h3><p>Fold a towel, pack it and the pegs into a bag, and move the bag to the target side.</p></div>
+      </article>
+      <article class="video-card">
+        <video controls preload="metadata" playsinline poster="assets/posters/lidded-box-packing.jpg"><source src="assets/videos/lidded-box-packing.mp4" type="video/mp4"></video>
+        <div><span>05</span><h3>Lidded Box Packing</h3><p>Open the box, pack the objects inside, and close the lid.</p></div>
+      </article>
+      <article class="video-card">
+        <video controls preload="metadata" playsinline poster="assets/posters/plant-sorting.jpg"><source src="assets/videos/plant-sorting.mp4" type="video/mp4"></video>
+        <div><span>06</span><h3>Plant Sorting</h3><p>Place three wooden plant objects into their matching box slots.</p></div>
+      </article>
+      <article class="video-card">
+        <video controls preload="metadata" playsinline poster="assets/posters/towel-box-packing.jpg"><source src="assets/videos/towel-box-packing.mp4" type="video/mp4"></video>
+        <div><span>07</span><h3>Towel Box Packing</h3><p>Remove pegs, fold the towel, reposition the box, and place the towel inside.</p></div>
+      </article>
+      <article class="video-card">
+        <video controls preload="metadata" playsinline poster="assets/posters/two-towel-box-packing.jpg"><source src="assets/videos/two-towel-box-packing.mp4" type="video/mp4"></video>
+        <div><span>08</span><h3>Two-Towel Box Packing</h3><p>Remove pegs, fold two towels, and place both into the box.</p></div>
+      </article>
+      <article class="video-card">
+        <video controls preload="metadata" playsinline poster="assets/posters/towels-and-cable-bagging.jpg"><source src="assets/videos/towels-and-cable-bagging.mp4" type="video/mp4"></video>
+        <div><span>09</span><h3>Towels-and-Cable Bagging</h3><p>Fold two towels, pick up the cable, and place all three items into the bag.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="results" class="section results-section">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Experimental results</p>
+        <h2>Targeted intervention improves success with less control data</h2>
+        <p>Success rates are measured over 25 unassisted physical rollouts per task and method unless otherwise noted. Time reports recorded demonstration or operator-control data.</p>
+      </div>
+
+      <article class="result-block">
+        <div class="result-title"><span>Table 1</span><h3>Main seven-task benchmark</h3><p>Success (%) and recorded control-data time. Δt is cumulative additional operator-control time.</p></div>
+        <div class="table-scroll">
+          <table class="data-table wide-table">
+            <thead>
+              <tr><th rowspan="2">Task</th><th colspan="2">Initial</th><th colspan="2">Human R1</th><th colspan="2">Human R2</th><th colspan="2">AutoIntervene R1</th><th colspan="2">AutoIntervene R2</th><th colspan="2">Additional Full Data</th></tr>
+              <tr><th>Succ.</th><th>Time</th><th>Succ.</th><th>Δt</th><th>Succ.</th><th>Δt</th><th>Succ.</th><th>Δt</th><th>Succ.</th><th>Δt</th><th>Succ.</th><th>Time</th></tr>
+            </thead>
+            <tbody>
+              <tr><th>Peg Disassembly</th><td>16%</td><td>1173.7s</td><td>52%</td><td>123.6s</td><td>56%</td><td>286.9s</td><td>64%</td><td>49.3s</td><td class="best">72%</td><td>127.1s</td><td>60%</td><td>1853.0s</td></tr>
+              <tr><th>Potato Transfer</th><td>44%</td><td>368.7s</td><td>52%</td><td>20.7s</td><td class="best">80%</td><td>74.2s</td><td>48%</td><td>29.6s</td><td>76%</td><td>50.2s</td><td>64%</td><td>547.3s</td></tr>
+              <tr><th>Towel Folding</th><td>56%</td><td>766.2s</td><td>60%</td><td>36.4s</td><td class="best">100%</td><td>144.8s</td><td>76%</td><td>61.4s</td><td>96%</td><td>140.4s</td><td>68%</td><td>1100.0s</td></tr>
+              <tr><th>Towel Bagging</th><td>24%</td><td>1761.1s</td><td>32%</td><td>130.2s</td><td>36%</td><td>266.5s</td><td>44%</td><td>121.6s</td><td class="best">60%</td><td>171.0s</td><td>40%</td><td>2536.7s</td></tr>
+              <tr><th>Lidded Box Packing</th><td>8%</td><td>989.6s</td><td>20%</td><td>107.5s</td><td>92%</td><td>246.7s</td><td>52%</td><td>63.1s</td><td class="best">100%</td><td>130.2s</td><td>60%</td><td>1440.0s</td></tr>
+              <tr><th>Plant Sorting</th><td>24%</td><td>450.2s</td><td>52%</td><td>88.8s</td><td>56%</td><td>157.1s</td><td>52%</td><td>76.6s</td><td class="best">72%</td><td>128.9s</td><td>32%</td><td>693.1s</td></tr>
+              <tr><th>Towel Box Packing</th><td>44%</td><td>1332.4s</td><td>52%</td><td>36.4s</td><td>60%</td><td>83.3s</td><td>80%</td><td>61.4s</td><td class="best">84%</td><td>112.3s</td><td>68%</td><td>1930.5s</td></tr>
+              <tr class="average"><th>Average</th><td>30.9%</td><td>977.4s</td><td>45.7%</td><td>77.7s</td><td>68.6%</td><td>179.9s</td><td>59.4%</td><td>66.1s</td><td class="best">80.0%</td><td>122.9s</td><td>56.0%</td><td>1442.9s</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <div class="result-grid">
+        <article class="result-block">
+          <div class="result-title"><span>Table 2</span><h3>Long-horizon adaptation</h3><p>Success (%) over three rounds.</p></div>
+          <div class="table-scroll"><table class="data-table">
+            <thead><tr><th>Training stage</th><th>Two-Towel Box Packing</th><th>Towels-and-Cable Bagging</th></tr></thead>
+            <tbody>
+              <tr><th>Initial Policy</th><td>28%</td><td>8%</td></tr>
+              <tr><th>AutoIntervene R1</th><td>44%</td><td>20%</td></tr>
+              <tr><th>AutoIntervene R2</th><td>64%</td><td>28%</td></tr>
+              <tr><th>AutoIntervene R3</th><td class="best">88%</td><td class="best">48%</td></tr>
+              <tr><th>Additional Full Data</th><td>52%</td><td>28%</td></tr>
+            </tbody>
+          </table></div>
+        </article>
+
+        <article class="result-block">
+          <div class="result-title"><span>Table 3</span><h3>Action-head compatibility</h3><p>Two-Towel Box Packing success (%).</p></div>
+          <div class="table-scroll"><table class="data-table">
+            <thead><tr><th>Training stage</th><th>DP</th><th>FM</th><th>ACT</th></tr></thead>
+            <tbody>
+              <tr><th>Initial Policy</th><td>32%</td><td>32%</td><td>28%</td></tr>
+              <tr><th>AutoIntervene R1</th><td>40%</td><td>36%</td><td>44%</td></tr>
+              <tr><th>AutoIntervene R2</th><td>56%</td><td>48%</td><td>64%</td></tr>
+              <tr><th>AutoIntervene R3</th><td class="best">92%</td><td class="best">80%</td><td class="best">88%</td></tr>
+              <tr><th>Additional Full Data</th><td>44%</td><td>40%</td><td>52%</td></tr>
+            </tbody>
+          </table></div>
+        </article>
+      </div>
+
+      <article class="result-block">
+        <div class="result-title"><span>Table 4</span><h3>Controlled handoff comparison</h3><p>Lidded Box Packing; 10 perturbed and 10 nominal rollouts per method. ↑ higher is better; ↓ lower is better.</p></div>
+        <div class="table-scroll"><table class="data-table handoff-table">
+          <thead><tr><th>Method</th><th>Cut-in Recall ↑</th><th>Cut-in Precision ↑</th><th>Cut-out Recall ↑</th><th>Cut-out Precision ↑</th><th>False-trigger Rate ↓</th></tr></thead>
+          <tbody>
+            <tr class="featured"><th>AutoIntervene</th><td>1.00</td><td>1.00</td><td>1.00</td><td>1.00</td><td>0.00</td></tr>
+            <tr class="group-row"><th colspan="6">Prior handoff monitors</th></tr>
+            <tr><th>LazyDAgger</th><td>0.40</td><td>1.00</td><td>0.00</td><td>N/A</td><td>0.80</td></tr>
+            <tr><th>RND-DAgger (W<sub>rec</sub>=5)</th><td>0.80</td><td>0.16</td><td>0.00</td><td>0.00</td><td>0.90</td></tr>
+            <tr><th>RND-DAgger (W<sub>rec</sub>=30)</th><td>0.80</td><td>0.16</td><td>0.75</td><td>0.12</td><td>0.90</td></tr>
+            <tr class="group-row"><th colspan="6">Ablations</th></tr>
+            <tr><th>w/o visual support</th><td>0.00</td><td>N/A</td><td>N/A</td><td>N/A</td><td>0.00</td></tr>
+            <tr><th>w/o action risk</th><td>0.90</td><td>1.00</td><td>0.56</td><td>0.56</td><td>0.00</td></tr>
+          </tbody>
+        </table></div>
+      </article>
     </div>
   </section>
 
