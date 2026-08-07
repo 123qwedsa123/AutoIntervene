@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AutoIntervene: calibrated bidirectional intervention for action-chunking imitation learning policies.">
+  <title>AutoIntervene</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="#top">AutoIntervene</a>
+      <div class="nav-links">
+        <a href="#method">Method</a>
+        <a href="#experiments">Experiments</a>
+        <a href="#citation">Citation</a>
+      </div>
+    </nav>
+
+    <main id="top" class="shell hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Robot Learning · Interactive Imitation Learning</p>
+        <h1>Calibrated intervention for action-chunking policies</h1>
+        <p class="lede">AutoIntervene selectively transfers control between a visuomotor policy and an operator, turning targeted recovery into supervision for the next policy update.</p>
+        <div class="actions">
+          <a class="button primary" href="assets/AutoIntervene.pdf">Read the paper</a>
+          <a class="button secondary" href="#method">Explore the method</a>
+        </div>
+        <p class="meta">Project page · Author information forthcoming</p>
+      </div>
+      <figure class="hero-figure">
+        <img src="assets/tasks.jpg" alt="Representative real-world bimanual manipulation task evaluated with AutoIntervene">
+        <figcaption>Representative real-world bimanual manipulation.</figcaption>
+      </figure>
+    </main>
+  </header>
+
+  <section class="shell section intro" aria-labelledby="overview-title">
+    <div>
+      <p class="section-kicker">Overview</p>
+      <h2 id="overview-title">Know when to ask for help—and when to give control back.</h2>
+    </div>
+    <p>Action-chunking policies can produce smooth actions even after perception error or execution drift moves the robot outside demonstrated support. AutoIntervene evaluates proposed chunks against a visual-action memory of successful task executions. Phase-local support triggers policy-to-operator transfer; global support enables autonomous operation to resume after recovery.</p>
+  </section>
+
+  <section id="method" class="section tinted">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Method</p>
+        <h2>A bidirectional control loop</h2>
+        <p>Separate switching thresholds are calibrated from held-out expert demonstrations, avoiding direct manual tuning of score cutoffs.</p>
+      </div>
+      <figure class="method-figure">
+        <img src="assets/method.png" alt="AutoIntervene online control loop and policy adaptation framework">
+      </figure>
+      <div class="steps">
+        <article><span>01</span><h3>Construct</h3><p>Pair current visual embeddings with the policy's proposed action chunk.</p></article>
+        <article><span>02</span><h3>Evaluate</h3><p>Measure visual support and action risk against successful references.</p></article>
+        <article><span>03</span><h3>Transfer</h3><p>Select policy or operator control using calibrated acceptance criteria.</p></article>
+        <article><span>04</span><h3>Adapt</h3><p>Retain successful intervention segments as targeted corrective data.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiments" class="shell section">
+    <div class="section-heading narrow">
+      <p class="section-kicker">Experiments</p>
+      <h2>Tested on diverse, long-horizon manipulation</h2>
+      <p>AutoIntervene is evaluated with ACT, Diffusion Policy, and Flow Matching action heads across tasks involving deformable objects, containers, sorting, transfer, and disassembly.</p>
+    </div>
+    <div class="gallery">
+      <img src="assets/towel.jpg" alt="Bimanual towel manipulation experiment" loading="lazy">
+      <img src="assets/vegetable.jpg" alt="Vegetable sorting experiment" loading="lazy">
+      <img src="assets/disassembly.jpg" alt="Peg disassembly experiment" loading="lazy">
+    </div>
+  </section>
+
+  <section class="section conclusion">
+    <div class="shell conclusion-card">
+      <p class="section-kicker">Key result</p>
+      <h2>Target intervention where the learner actually needs it.</h2>
+      <p>Across real-world bimanual tasks, targeted intervention trajectories support iterative policy improvement with less operator-control time than collecting additional full demonstrations.</p>
+      <a class="text-link" href="assets/AutoIntervene.pdf">View complete results in the paper →</a>
+    </div>
+  </section>
+
+  <section id="citation" class="shell section citation">
+    <div>
+      <p class="section-kicker">Citation</p>
+      <h2>BibTeX</h2>
+    </div>
+    <pre><code>@article{autointervene2026,
+  title   = {AutoIntervene: Calibrated Intervention for
+             Action-Chunking Imitation Learning Policies},
+  year    = {2026}
+}</code></pre>
+    <p class="citation-note">Author and publication metadata will be updated when finalized.</p>
+  </section>
+
+  <footer>
+    <div class="shell footer-inner">
+      <span>AutoIntervene</span>
+      <span>Academic project page · 2026</span>
+    </div>
+  </footer>
+</body>
+</html>
